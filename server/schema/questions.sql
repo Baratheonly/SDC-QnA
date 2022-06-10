@@ -1,5 +1,7 @@
 -- Table: public.questions
 
+--  Start psql: psql -U postgres
+
 -- DROP TABLE IF EXISTS public.questions;
 
 CREATE TABLE IF NOT EXISTS public.questions
