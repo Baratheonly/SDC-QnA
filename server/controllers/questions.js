@@ -26,8 +26,9 @@ module.exports = {
             WHERE answer_id=answers.id)))
             AS answers FROM answers
             WHERE question_id=questions.id)
-            FROM questions WHERE product_id = $1 AND reported = false`;
-    dbconnect.query(queryStr,[req.query.product_id])
+            FROM questions WHERE product_id = $1 AND reported = false
+            LIMIT $2 OFFSET $3`;
+    dbconnect.query(queryStr,[req.query.product_id, count, (page - 1) * count])
       .then((data) => {
         let sendData = {
           "product_id": req.query.product_id,

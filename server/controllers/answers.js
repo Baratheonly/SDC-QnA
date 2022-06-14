@@ -16,11 +16,12 @@ module.exports = {
           'url', url)), '[]')
           AS photos FROM answers_photos
           WHERE answer_id = answers.id)
-      FROM answers WHERE question_id = $1 AND reported = false`;
-    dbconnect.query(queryStr,[req.params.question_id[1]])
+      FROM answers WHERE question_id = $1 AND reported = false
+      LIMIT $2 OFFSET $3`;
+    dbconnect.query(queryStr,[req.params.question_id, count, (page - 1) * count])
       .then((data) => {
         let sendData = {
-          "question": req.params.question_id[1],
+          "question": req.params.question_id,
           "page": req.query.page,
           "count": req.query.count,
           "results": data.rows
