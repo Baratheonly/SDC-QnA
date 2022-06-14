@@ -24,7 +24,7 @@ app.use('/qa', router);
 
 
 app.get(`/loaderio-8ac205ebd510f8a2713c7857bc635aa7`, (req, res) => {
-  res.send(`/loaderio-8ac205ebd510f8a2713c7857bc635aa7`);
+  res.send(`loaderio-8ac205ebd510f8a2713c7857bc635aa7`);
 });
 
 // If we are being run directly, run the server.
