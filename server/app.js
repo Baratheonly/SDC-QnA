@@ -23,8 +23,8 @@ app.use(express.json());
 app.use('/qa', router);
 
 
-app.get(`/${process.env.LOADER}`, (req, res) => {
-  res.send(`/${process.env.LOADER}`);
+app.get(`/loaderio-8ac205ebd510f8a2713c7857bc635aa7`, (req, res) => {
+  res.send(`/loaderio-8ac205ebd510f8a2713c7857bc635aa7`);
 });
 
 // If we are being run directly, run the server.
