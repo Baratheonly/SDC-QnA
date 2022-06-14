@@ -13,7 +13,11 @@ router.get('/questions/:question_id/answers', controller.answers.get);
 // Posting a question
 router.post('/questions', controller.questions.post);
 
-//
+// LOADER IO
+
+router.get(`/${process.env.LOADER}`, (req, res) => {
+  res.send(`/${process.env.LOADER}`);
+})
 
 module.exports = router;
 
