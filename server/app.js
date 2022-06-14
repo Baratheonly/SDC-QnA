@@ -1,5 +1,5 @@
 var express = require('express');
-
+require('dotenv').config();
 
 // Set up Middleware
 var morgan = require('morgan');
