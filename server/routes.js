@@ -15,9 +15,7 @@ router.post('/questions', controller.questions.post);
 
 // LOADER IO
 
-router.get(`/loaderio-8ac205ebd510f8a2713c7857bc635aa7`, (req, res) => {
-  res.send(`/loaderio-8ac205ebd510f8a2713c7857bc635aa7`);
-})
+
 
 module.exports = router;
 
