@@ -41,7 +41,6 @@ module.exports = {
 
   post: function (req, res) {
     console.log('Posting Question for product_id: ', req.body.product_id);
-    // let date = new Date();
     let queryStr = `INSERT INTO questions
     (product_id, body, timestamp, asker_name, asker_email, reported, helpful)
     VALUES ($1, $2, now(), $3, $4, $5, $6)`;

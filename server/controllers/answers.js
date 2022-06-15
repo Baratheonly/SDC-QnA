@@ -29,5 +29,9 @@ module.exports = {
         res.send(data.rows);
       })
       .catch(err => console.log(err));
+  },
+
+  post: function (req, res) {
+    console.log('hi')
   }
 };

@@ -13,7 +13,8 @@ router.get('/questions/:question_id/answers', controller.answers.get);
 // Posting a question
 router.post('/questions', controller.questions.post);
 
-// LOADER IO
+// Posting an answer
+router.post('/questions/:question_id/answers', controller.answers.post);
 
 
 
