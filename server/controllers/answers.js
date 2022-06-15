@@ -2,7 +2,7 @@ var dbconnect = require('../db');
 
 module.exports = {
   get: function (req, res) {
-    console.log('Getting answers from questions_id: ', req.params.question_id);
+    // console.log('Getting answers from questions_id: ', req.params.question_id);
     let page = req.query.page || 1;
     let count = req.query.count || 5;
     let queryStr = `SELECT
