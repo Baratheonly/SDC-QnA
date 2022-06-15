@@ -32,6 +32,26 @@ module.exports = {
   },
 
   post: function (req, res) {
-    console.log('hi')
+    console.log('Adding answers: ', req.params.question_id, req.body.body);
+    let queryStr = `INSERT INTO answers
+    (question_id, body, answerer_name, answerer_email, reported, helpful, timestamp)
+    VALUES ($1, $2, $3, $4, $5, $6, now())
+    RETURNING answers.id`;
+
+    dbconnect.query(queryStr, [req.params.question_id, req.body.body, req.body.name, req.body.email, false, 0])
+      .then((data) => {
+        let review_id = data.rows[0].id;
+        console.log('This is review_id: ', review_id);
+        let queryStr2 = `INSERT INTO answers_photos
+        (answer_id, url)
+        SELECT $1, UNNEST($2::text[])
+        RETURNING *`;
+        return dbconnect.query(queryStr2, [review_id, req.body.photos])
+      })
+      .catch(err => console.log(err))
+      .then(() =>
+        res.sendStatus(201))
+      .catch(err => err);
+
   }
 };
