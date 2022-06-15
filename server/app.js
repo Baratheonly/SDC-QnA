@@ -15,8 +15,8 @@ var app = express();
 app.set('port', 3000);
 
 // Logging & Parsing w/ Middleware
-app.use(morgan('dev'));
-app.use(cors());
+// app.use(morgan('dev'));
+// app.use(cors());
 app.use(express.json());
 
 //Set up our routes
