@@ -16,7 +16,16 @@ router.post('/questions', controller.questions.post);
 // Posting an answer
 router.post('/questions/:question_id/answers', controller.answers.post);
 
+// Mark question as helpful
+router.put('/questions/:question_id/helpful', controller.questions.helpful);
 
+// Report Question
+router.put('/questions/:question_id/report', controller.questions.report);
 
+// Mark answer as helpful
+router.put('/answers/:answer_id/helpful', controller.answers.helpful);
+
+// Report answer
+router.put('/answers/:answer_id/report', controller.answers.report);
 module.exports = router;
 

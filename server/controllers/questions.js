@@ -40,12 +40,32 @@ module.exports = {
   },
 
   post: function (req, res) {
-    console.log('Posting Question for product_id: ', req.body.product_id);
+    // console.log('Posting Question for product_id: ', req.body.product_id);
     let queryStr = `INSERT INTO questions
     (product_id, body, timestamp, asker_name, asker_email, reported, helpful)
     VALUES ($1, $2, now(), $3, $4, $5, $6)`;
     dbconnect.query(queryStr, [req.body.product_id, req.body.body, req.body.name, req.body.email, false, 0])
       .then(() => res.sendStatus(201))
       .catch((err) => console.log(err));
+  },
+
+  helpful: function(req, res) {
+    let queryStr = `
+    UPDATE questions
+    SET helpful = helpful + 1
+    WHERE id = $1`
+    dbconnect.query(queryStr, [req.params.question_id])
+      .then(() => res.sendStatus(204))
+      .catch((err) => err);
+  },
+
+  report: function (req, res) {
+    let queryStr = `
+    UPDATE question
+    SET reported = true
+    WHERE id = $1`;
+    dbconnect.query(queryStr, [req.params.question_id])
+      .then(() => res.sendStatus(204))
+      .catch((err) => err);
   }
 };

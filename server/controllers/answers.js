@@ -32,7 +32,7 @@ module.exports = {
   },
 
   post: function (req, res) {
-    console.log('Adding answers: ', req.params.question_id, req.body.body);
+    // console.log('Adding answers: ', req.params.question_id, req.body.body);
     let queryStr = `INSERT INTO answers
     (question_id, body, answerer_name, answerer_email, reported, helpful, timestamp)
     VALUES ($1, $2, $3, $4, $5, $6, now())
@@ -41,7 +41,7 @@ module.exports = {
     dbconnect.query(queryStr, [req.params.question_id, req.body.body, req.body.name, req.body.email, false, 0])
       .then((data) => {
         let review_id = data.rows[0].id;
-        console.log('This is review_id: ', review_id);
+        // console.log('This is review_id: ', review_id);
         let queryStr2 = `INSERT INTO answers_photos
         (answer_id, url)
         SELECT $1, UNNEST($2::text[])
@@ -53,5 +53,25 @@ module.exports = {
         res.sendStatus(201))
       .catch(err => err);
 
+  },
+
+  helpful: function (req, res) {
+    let queryStr = `
+    UPDATE answers
+    SET helpful = helpful + 1
+    WHERE id = $1`;
+    dbconnect.query(queryStr, [req.params.answers_id])
+      .then(() => res.sendStatus(204))
+      .catch((err) => err);
+  },
+
+  report: function (req, res) {
+    let queryStr = `
+    UPDATE answers
+    SET reported = true
+    WHERE id = $1`;
+    dbconnect.query(queryStr, [req.params.answers_id])
+      .then(() => res.sendStatus(204))
+      .catch((err) => err);
   }
 };
