@@ -19,7 +19,7 @@ Created a backend API microservice to provide the required data (Questions and A
 Before (Through k6 local stress testing):
 
 After (loader.io cloud stress testing):
-
+![loader.io] (https://ibb.co/KjGnGtg)
 ## Installation
 
 Step 1: Install dependencies ~ npm install
