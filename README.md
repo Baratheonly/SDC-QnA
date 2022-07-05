@@ -1,8 +1,24 @@
 # Baratheonly System Design | Questions & Answers
 
-## Summary:
+## Summary
+
+Created a backend API microservice to provide the required data (Questions and Answers) for an existing e-commerce website with existing frontend legacy code. Made incremental improvements to improve web traffic throughput (RPS) and response time in order to handle normal web traffic loads. Utilized stress testing tools such as k6 and loader.io to determine improvements in performance metrics.
 
 ## Improvements
+
+### Database Improvements
+
+- Built aggregate Postgres queries to help reduce database bottlenecking in query times
+- Added indexing to lookup columns in Postgres database to improve lookup times. Improved lookup times from seconds to milliseconds
+
+### Horizontal Scaling
+
+- Deployed 4 AWS EC2 server instances with load balancing server through NGINX, to increase web traffic throughput from 100 RPS to 2000 RPS while maintaining 60 ms average response time with 0% timeout (error) rate
+- Implemented Caching in NGINX to further improve response times. Able to reduce times from 60ms to 5ms for most commonly requested products.
+
+Before (Through k6 local stress testing):
+
+After (loader.io cloud stress testing):
 
 ## Installation
 
