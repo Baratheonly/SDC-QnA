@@ -17,9 +17,10 @@ Created a backend API microservice to provide the required data (Questions and A
 - Implemented Caching in NGINX to further improve response times. Able to reduce times from 60ms to 5ms for most commonly requested products.
 
 Before (Through k6 local stress testing):
-
+![k6](https://ibb.co/pX4nywX)
 After (loader.io cloud stress testing):
-![loader.io] (https://ibb.co/KjGnGtg)
+![loader.io](https://ibb.co/KjGnGtg)
+
 ## Installation
 
 Step 1: Install dependencies ~ npm install
@@ -35,7 +36,7 @@ Step 2: start server ~ npm run server-dev
 - Back End Development: Node.js, Express.js, PostgreSQL \
   ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
   ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
-  ![PostgreSQL] (https://img.shields.io/badge/PostgreSQL-SQL-9cf)
+  ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-9cf)
 
 - Server Testing: Loader.io, k6 \
   ![k6](https://img.shields.io/badge/k6-local-blue)
