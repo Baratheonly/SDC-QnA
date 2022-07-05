@@ -20,7 +20,7 @@ Before (Through k6 local stress testing) \
 ![k6](https://i.ibb.co/w6pYsg6/Screen-Shot-2022-07-05-at-3-01-24-PM.png)
 
 After (loader.io cloud stress testing) \
-![loader.io](https://ibb.co/KjGnGtg)
+![loader.io](h[ttps://ibb.co/KjGnGtg](https://i.ibb.co/8DBkByw/Screen-Shot-2022-07-05-at-2-58-39-PM.png))
 
 ## Installation
 
