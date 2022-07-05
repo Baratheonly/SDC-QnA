@@ -17,7 +17,8 @@ Created a backend API microservice to provide the required data (Questions and A
 - Implemented Caching in NGINX to further improve response times. Able to reduce times from 60ms to 5ms for most commonly requested products.
 
 Before (Through k6 local stress testing) \
-![k6](https://ibb.co/pX4nywX)
+![k6](https://i.ibb.co/w6pYsg6/Screen-Shot-2022-07-05-at-3-01-24-PM.png)
+
 After (loader.io cloud stress testing) \
 ![loader.io](https://ibb.co/KjGnGtg)
 
