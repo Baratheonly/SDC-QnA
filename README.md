@@ -16,9 +16,9 @@ Created a backend API microservice to provide the required data (Questions and A
 - Deployed 4 AWS EC2 server instances with load balancing server through NGINX, to increase web traffic throughput from 100 RPS to 2000 RPS while maintaining 60 ms average response time with 0% timeout (error) rate
 - Implemented Caching in NGINX to further improve response times. Able to reduce times from 60ms to 5ms for most commonly requested products.
 
-Before (Through k6 local stress testing):
+Before (Through k6 local stress testing) \
 ![k6](https://ibb.co/pX4nywX)
-After (loader.io cloud stress testing):
+After (loader.io cloud stress testing) \
 ![loader.io](https://ibb.co/KjGnGtg)
 
 ## Installation
