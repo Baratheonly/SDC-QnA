@@ -18,6 +18,7 @@ Created a backend API microservice to provide the required data (Questions and A
 
 Before (Through k6 local stress testing) \
 ![k6](https://ibb.co/pX4nywX)
+
 After (loader.io cloud stress testing) \
 ![loader.io](https://ibb.co/KjGnGtg)
 
@@ -45,3 +46,5 @@ Step 2: start server ~ npm run server-dev
 - Deployment & Load Balancing: AWS EC2, Ubuntu, NGINX \
   ![AWS](https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white)
   ![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+
+Michael Lin
